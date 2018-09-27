@@ -2,7 +2,9 @@
 
 ## Run as container
 
-Does not work yet
+Run as follows:
+    
+    $ docker run --privileged --network=host -d duckietown/rpi-health
 
 ## Run manually
 

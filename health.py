@@ -127,5 +127,20 @@ def run(server_class=HTTPServer, handler_class=S, port=80):
     httpd.serve_forever()
 
 
+def just_check():
+    health = go()
+    if health['status'] == 'error':
+        msg = "\n".join(health['status_msgs'])
+        sys.stderr.write('Status = error\n')
+        sys.stderr.write(msg+'\n')
+        sys.stderr.flush()
+        sys.exit(1)
+    else:
+        sys.exit(0)
+
+
 if __name__ == '__main__':
-    run(port=8085)
+    if 'just-check' in sys.argv:
+        just_check()
+    else:
+        run(port=8085)
