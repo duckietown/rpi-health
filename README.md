@@ -2,22 +2,27 @@
 
 ## Run as container
 
-Does not work yet
+Does not work yet as a container.
 
-## Run manually
+(The image `rpi-ros-kinetic-base` does not contain `vcgencmd`.)
 
-Quickly run as follows:
+## Run it manually
+
+Quickly run over ssh as follows:
 
 	$ ssh duckiebot.local python < health.py
 
-You can also get the output as JSON over http:
+The program reports the output in JSON on stdout.
 
-	$ wget duckiebot.local:8085
+Then it starts listening on port 8085. 
+You can get the output as JSON over http as follows:
+
+	$ wget http://duckiebot.local:8085
 
 
 ## Output interpretation
 
-There will be an output similar to:
+The output is a JSON structure as follows:
 
 ```
 {
