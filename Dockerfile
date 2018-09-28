@@ -3,15 +3,16 @@ FROM resin/rpi-raspbian
 ENV DEBIAN_FRONTEND=noninteractive
 
 
-RUN apt-get update
-RUN apt-get install -y software-properties-common
-RUN add-apt-repository ppa:ubuntu-raspi2/ppa
-RUN apt-get update
-RUN apt-get install -y --no-install-recommends \
-    libraspberrypi-bin python
+#RUN apt-get update
+#RUN apt-get
+#RUN apt-get install -y software-properties-common
+##RUN add-apt-repository ppa:ubuntu-raspi2/ppa
+##RUN apt-get update
+#RUN apt-get install -y --no-install-recommends \
+#    libraspberrypi-bin python
 
 
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+#RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY health.py /project/health.py
 RUN chmod +x /project/health.py
