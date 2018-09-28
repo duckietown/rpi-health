@@ -4,21 +4,21 @@
 
 Run as follows:
     
-    $ docker run --privileged --network=host -d duckietown/rpi-health
+    $ docker run --device /dev/vchiq -p 8085:8085 -d duckietown/rpi-health
 
 
 ## Run it manually
 
 Quickly run over ssh as follows:
 
-	$ ssh duckiebot.local python < health.py
+    $ ssh duckiebot.local python < health.py
 
 The program reports the output in JSON on stdout.
 
 Then it starts listening on port 8085. 
 You can get the output as JSON over http as follows:
 
-	$ wget http://duckiebot.local:8085
+    $ wget http://duckiebot.local:8085
 
 
 ## Output interpretation

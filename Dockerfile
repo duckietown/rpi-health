@@ -1,16 +1,22 @@
+FROM resin/rpi-raspbian
 FROM duckietown/rpi-ros-kinetic-base
 
 
+ENV DEBIAN_FRONTEND=noninteractive
 
-#RUN [ "cross-build-start" ]
 
-COPY vcgencmd /usr/bin/vcgencmd
-RUN chmod +x /usr/bin/vcgencmd
+RUN apt-get update
+RUN apt-get install -y software-properties-common
+RUN add-apt-repository ppa:ubuntu-raspi2/ppa
+RUN apt-get update
+RUN apt-get install -y --no-install-recommends \
+    libraspberrypi-bin python
+
+
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY health.py /project/health.py
 RUN chmod +x /project/health.py
-
-#RUN [ "cross-build-end" ]
 
 CMD /usr/bin/python /project/health.py
 
