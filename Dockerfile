@@ -1,6 +1,4 @@
 FROM resin/rpi-raspbian
-FROM duckietown/rpi-ros-kinetic-base
-
 
 ENV DEBIAN_FRONTEND=noninteractive
 
