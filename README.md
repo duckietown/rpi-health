@@ -82,13 +82,11 @@ Where:
 
 ## TODOs
 
-TODO: Check temperature level.
+- [ ] Check temperature level.
 
-TODO: Check good memory split.
+- [ ] Check good memory split. (which one is good?)
 
-TODO: Run as container.
+- [x] Run as container.
 
-TODO: Make the result of the health check count as Docker health check using HEALTHCHECK command.
-
-See: https://blog.newrelic.com/engineering/docker-health-check-instruction/
+- [x] Make the result of the health check count as Docker health check using HEALTHCHECK command. See: https://blog.newrelic.com/engineering/docker-health-check-instruction/
 
