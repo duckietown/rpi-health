@@ -1,7 +1,5 @@
 FROM resin/raspberrypi3-python
 
-ENV DEBIAN_FRONTEND=noninteractive
-
 COPY health.py /project/health.py
 
 CMD /usr/bin/python /project/health.py
