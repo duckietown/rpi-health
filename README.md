@@ -1,5 +1,7 @@
 # RPI Health check 
 
+[![Docker Hub](https://img.shields.io/docker/pulls/duckietown/rpi-health.svg)](https://hub.docker.com/r/duckietown/rpi-health)
+
 ## Run as container
 
 Run as follows:
