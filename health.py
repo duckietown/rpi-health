@@ -98,8 +98,14 @@ from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 
 class S(BaseHTTPRequestHandler):
     def _set_headers(self):
+        # open headers
         self.send_response(200)
         self.send_header('Content-type', 'application/json')
+        # support CORS
+        origin = self.headers.getheader('Origin', None)
+        if origin:
+            self.send_header('Access-Control-Allow-Origin', origin)
+        # close headers
         self.end_headers()
 
     def do_GET(self):
